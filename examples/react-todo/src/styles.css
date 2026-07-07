@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f7f8fa;
+  color: #1f2933;
+}
+
+main {
+  max-width: 720px;
+  margin: 48px auto;
+  padding: 24px;
+}
+
+header,
+form,
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 12px;
+}
+
+button {
+  padding: 10px 14px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid #d9dee7;
+  padding: 12px 0;
+}
