@@ -2,7 +2,7 @@
 
 ## `createSyncEngine(options)`
 
-Creates a SyncKit engine.
+Creates an Open Sync engine.
 
 - `dbName`: IndexedDB database name.
 - `collections`: collection names to register.

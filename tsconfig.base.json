@@ -16,9 +16,9 @@
     ,
     "baseUrl": ".",
     "paths": {
-      "@synckit/shared": ["packages/shared/src/index.ts"],
-      "@synckit/core": ["packages/core/src/index.ts"],
-      "@synckit/react": ["packages/react/src/index.tsx"]
+      "@open-sync/shared": ["packages/shared/src/index.ts"],
+      "@open-sync/core": ["packages/core/src/index.ts"],
+      "@open-sync/react": ["packages/react/src/index.tsx"]
     }
   }
 }

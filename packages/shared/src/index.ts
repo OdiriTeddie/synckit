@@ -62,10 +62,10 @@ export interface SyncStatus {
   lastSyncedAt?: string;
 }
 
-export class SyncKitError extends Error {
+export class OpenSyncError extends Error {
   constructor(message: string, public readonly code: string) {
     super(message);
-    this.name = "SyncKitError";
+    this.name = "OpenSyncError";
   }
 }
 

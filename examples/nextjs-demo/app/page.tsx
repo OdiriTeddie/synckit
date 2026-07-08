@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { SyncProvider, useCollection, useCreate, useDelete, useUpdate } from "@synckit/react";
-import type { SyncAdapter, SyncRecord } from "@synckit/core";
+import { SyncProvider, useCollection, useCreate, useDelete, useUpdate } from "@open-sync/react";
+import type { SyncAdapter, SyncRecord } from "@open-sync/core";
 
 interface Customer extends SyncRecord {
   name: string;
@@ -62,7 +62,7 @@ function CrudDemo() {
 
 export default function Page() {
   return (
-    <SyncProvider config={{ dbName: "synckit-nextjs-demo", collections: ["customers"], adapter }}>
+    <SyncProvider config={{ dbName: "open-sync-nextjs-demo", collections: ["customers"], adapter }}>
       <CrudDemo />
     </SyncProvider>
   );

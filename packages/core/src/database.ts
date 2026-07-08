@@ -1,12 +1,12 @@
 import Dexie, { type Table } from "dexie";
-import type { QueuedOperation, SyncConflict, SyncRecord } from "@synckit/shared";
+import type { QueuedOperation, SyncConflict, SyncRecord } from "@open-sync/shared";
 
 export interface StoredRecord extends SyncRecord {
   storageId: string;
   collection: string;
 }
 
-export class SyncKitDatabase extends Dexie {
+export class OpenSyncDatabase extends Dexie {
   records!: Table<StoredRecord, string>;
   queue!: Table<QueuedOperation, string>;
   conflicts!: Table<SyncConflict, string>;

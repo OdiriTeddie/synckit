@@ -3,7 +3,7 @@
 Install the core package and Dexie-backed engine:
 
 ```sh
-pnpm add @synckit/core dexie
+pnpm add @open-sync/core dexie
 ```
 
 Create an engine with a database name, collection names, and a backend adapter.

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 export const metadata = {
-  title: "SyncKit Next.js Demo",
-  description: "Local-first CRUD demo powered by SyncKit."
+  title: "Open Sync Next.js Demo",
+  description: "Local-first CRUD demo powered by Open Sync."
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

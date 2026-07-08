@@ -1,5 +1,5 @@
 {
-  "name": "synckit",
+  "name": "open-sync",
   "version": "0.1.0",
   "private": true,
   "description": "Local-first sync engine monorepo.",

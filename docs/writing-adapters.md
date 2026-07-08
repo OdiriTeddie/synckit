@@ -1,6 +1,6 @@
 # Writing Adapters
 
-Adapters define how SyncKit talks to your backend. SyncKit does not assume REST, GraphQL, RPC, or a specific database.
+Adapters define how Open Sync talks to your backend. Open Sync does not assume REST, GraphQL, RPC, or a specific database.
 
 ```ts
 const adapter = {

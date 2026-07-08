@@ -35,10 +35,10 @@ importers:
 
   examples/nextjs-demo:
     dependencies:
-      '@synckit/core':
+      '@open-sync/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@synckit/react':
+      '@open-sync/react':
         specifier: workspace:*
         version: link:../../packages/react
       next:
@@ -66,10 +66,10 @@ importers:
 
   examples/offline-notes:
     dependencies:
-      '@synckit/core':
+      '@open-sync/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@synckit/react':
+      '@open-sync/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -100,10 +100,10 @@ importers:
 
   examples/react-todo:
     dependencies:
-      '@synckit/core':
+      '@open-sync/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@synckit/react':
+      '@open-sync/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -134,7 +134,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@synckit/shared':
+      '@open-sync/shared':
         specifier: workspace:*
         version: link:../shared
       dexie:
@@ -156,7 +156,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@synckit/core':
+      '@open-sync/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:

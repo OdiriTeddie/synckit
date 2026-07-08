@@ -1,5 +1,5 @@
 {
-  "name": "@synckit/react",
+  "name": "@open-sync/react",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -22,7 +22,7 @@
     "react": ">=18.2.0"
   },
   "dependencies": {
-    "@synckit/core": "workspace:*"
+    "@open-sync/core": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

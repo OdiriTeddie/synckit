@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 export default defineConfig({
   resolve: {
     alias: {
-      "@synckit/shared": fileURLToPath(new URL("../shared/src/index.ts", import.meta.url))
+      "@open-sync/shared": fileURLToPath(new URL("../shared/src/index.ts", import.meta.url))
     }
   },
   test: {

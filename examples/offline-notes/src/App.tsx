@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { SyncProvider, useCollection, useCreate, useSyncStatus } from "@synckit/react";
-import type { SyncAdapter, SyncRecord } from "@synckit/core";
+import { SyncProvider, useCollection, useCreate, useSyncStatus } from "@open-sync/react";
+import type { SyncAdapter, SyncRecord } from "@open-sync/core";
 
 interface Note extends SyncRecord {
   title: string;
@@ -44,7 +44,7 @@ function Notes() {
 }
 
 createRoot(document.getElementById("root")!).render(
-  <SyncProvider config={{ dbName: "synckit-offline-notes", collections: ["notes"], adapter }}>
+  <SyncProvider config={{ dbName: "open-sync-offline-notes", collections: ["notes"], adapter }}>
     <Notes />
   </SyncProvider>
 );

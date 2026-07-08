@@ -12,4 +12,4 @@ export type {
   SyncConflict,
   SyncRecord,
   SyncStatus
-} from "@synckit/shared";
+} from "@open-sync/shared";

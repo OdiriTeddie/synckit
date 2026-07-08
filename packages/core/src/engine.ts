@@ -1,5 +1,5 @@
 import { DexieCollection, type Collection } from "./collection";
-import { SyncKitDatabase, type StoredRecord } from "./database";
+import { OpenSyncDatabase, type StoredRecord } from "./database";
 import {
   createId,
   isAdapterConflict,
@@ -10,7 +10,7 @@ import {
   type SyncConflict,
   type SyncRecord,
   type SyncStatus
-} from "@synckit/shared";
+} from "@open-sync/shared";
 
 export interface CreateSyncEngineOptions {
   dbName: string;
@@ -40,7 +40,7 @@ export function createSyncEngine(options: CreateSyncEngineOptions): SyncEngine {
 }
 
 class DefaultSyncEngine implements SyncEngine {
-  private readonly db: SyncKitDatabase;
+  private readonly db: OpenSyncDatabase;
   private readonly collections = new Map<string, DexieCollection>();
   private readonly listeners = new Set<(status: SyncStatus) => void>();
   private readonly retryLimit: number;
@@ -51,7 +51,7 @@ class DefaultSyncEngine implements SyncEngine {
   readonly conflicts: SyncEngine["conflicts"];
 
   constructor(private readonly options: CreateSyncEngineOptions) {
-    this.db = new SyncKitDatabase(options.dbName);
+    this.db = new OpenSyncDatabase(options.dbName);
     this.retryLimit = options.retryLimit ?? DEFAULT_RETRY_LIMIT;
 
     for (const name of options.collections) {

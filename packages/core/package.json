@@ -1,5 +1,5 @@
 {
-  "name": "@synckit/core",
+  "name": "@open-sync/core",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -19,7 +19,7 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@synckit/shared": "workspace:*",
+    "@open-sync/shared": "workspace:*",
     "dexie": "^4.0.8"
   },
   "devDependencies": {

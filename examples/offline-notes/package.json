@@ -10,8 +10,8 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@synckit/core": "workspace:*",
-    "@synckit/react": "workspace:*",
+    "@open-sync/core": "workspace:*",
+    "@open-sync/react": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

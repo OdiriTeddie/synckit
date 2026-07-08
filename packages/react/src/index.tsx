@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type PropsWithChildren } from "react";
-import type { CreateSyncEngineOptions, SyncEngine, SyncRecord, SyncStatus } from "@synckit/core";
-import { createSyncEngine } from "@synckit/core";
+import type { CreateSyncEngineOptions, SyncEngine, SyncRecord, SyncStatus } from "@open-sync/core";
+import { createSyncEngine } from "@open-sync/core";
 
 const SyncContext = createContext<SyncEngine | null>(null);
 
@@ -27,7 +27,7 @@ export function SyncProvider({ children, sync, config }: SyncProviderProps) {
 
 export function useSyncEngine(): SyncEngine {
   const sync = useContext(SyncContext);
-  if (!sync) throw new Error("SyncKit hooks must be used inside <SyncProvider>.");
+  if (!sync) throw new Error("Open Sync hooks must be used inside <SyncProvider>.");
   return sync;
 }
 
@@ -86,4 +86,4 @@ export function useSyncStatus(): SyncStatus | undefined {
   return status;
 }
 
-export type { CreateSyncEngineOptions, SyncEngine, SyncRecord, SyncStatus } from "@synckit/core";
+export type { CreateSyncEngineOptions, SyncEngine, SyncRecord, SyncStatus } from "@open-sync/core";

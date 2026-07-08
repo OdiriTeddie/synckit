@@ -27,7 +27,7 @@ function engine(name = crypto.randomUUID(), customAdapter = adapter): SyncEngine
   return sync;
 }
 
-describe("SyncKit core", () => {
+describe("Open Sync core", () => {
   it("stores and reads records locally", async () => {
     const app = engine();
     const created = await app.collection("tasks").create({ title: "Buy milk" });

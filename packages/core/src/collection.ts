@@ -1,5 +1,5 @@
-import { createId, nowIso, type MutationType, type QueuedOperation, type SyncRecord } from "@synckit/shared";
-import type { SyncKitDatabase, StoredRecord } from "./database";
+import { createId, nowIso, type MutationType, type QueuedOperation, type SyncRecord } from "@open-sync/shared";
+import type { OpenSyncDatabase, StoredRecord } from "./database";
 
 export interface Collection<TRecord extends SyncRecord = SyncRecord> {
   create(input: Omit<Partial<TRecord>, "id" | "version" | "updatedAt"> & Record<string, unknown>): Promise<TRecord>;
@@ -13,7 +13,7 @@ export interface Collection<TRecord extends SyncRecord = SyncRecord> {
 export type QueueObserver = () => void | Promise<void>;
 
 interface CollectionOptions {
-  db: SyncKitDatabase;
+  db: OpenSyncDatabase;
   name: string;
   onQueue: QueueObserver;
 }

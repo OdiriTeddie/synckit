@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { SyncProvider, useCollection, useCreate, useDelete, useSyncStatus, useUpdate } from "@synckit/react";
-import type { SyncAdapter, SyncRecord } from "@synckit/core";
+import { SyncProvider, useCollection, useCreate, useDelete, useSyncStatus, useUpdate } from "@open-sync/react";
+import type { SyncAdapter, SyncRecord } from "@open-sync/core";
 import "./styles.css";
 
 interface Task extends SyncRecord {
@@ -69,7 +69,7 @@ function TodoApp() {
 }
 
 createRoot(document.getElementById("root")!).render(
-  <SyncProvider config={{ dbName: "synckit-react-todo", collections: ["tasks"], adapter }}>
+  <SyncProvider config={{ dbName: "open-sync-react-todo", collections: ["tasks"], adapter }}>
     <TodoApp />
   </SyncProvider>
 );
