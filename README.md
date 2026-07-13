@@ -37,4 +37,16 @@ await sync.syncNow();
 
 ## Documentation
 
-See `docs/` for getting started, adapter authoring, sync flow, conflict resolution, offline mode, React integration, and API reference.
+- [Getting Started](docs/getting-started.md)
+- [Defining Collections](docs/defining-collections.md)
+- [Writing Adapters](docs/writing-adapters.md)
+- [Sync Flow](docs/sync-flow.md)
+- [Queue Management](docs/queue-management.md)
+- [Events](docs/events.md)
+- [Migrations](docs/migrations.md)
+- [Conflict Resolution](docs/conflict-resolution.md)
+- [Error Handling](docs/error-handling.md)
+- [Offline Mode](docs/offline-mode.md)
+- [React Integration](docs/react-integration.md)
+- [Browser Integration Tests](docs/browser-integration-tests.md)
+- [API Reference](docs/api-reference.md)

@@ -4,6 +4,19 @@
 
 Creates an Open Sync engine.
 
+```ts
+const sync = createSyncEngine({
+  dbName: "app",
+  collections: ["tasks"],
+  adapter,
+  autoSync: true,
+  retryLimit: 3,
+  retryDelays: [1000, 2000, 4000, 8000],
+  schemaVersion: 1,
+  migrate: async ({ db }) => {}
+});
+```
+
 - `dbName`: IndexedDB database name.
 - `collections`: collection names to register.
 - `adapter`: backend adapter.
@@ -13,34 +26,42 @@ Creates an Open Sync engine.
 - `schemaVersion`: optional app schema version for migrations.
 - `migrate`: optional migration hook called when `schemaVersion` increases.
 
+See [Migrations](./migrations.md) for migration details.
+
 ## Collection API
 
 - `create(input)` accepts app fields and an optional string `id`; active duplicate IDs throw `duplicate_record`.
-- `update(id, patch)`
-- `delete(id)`
-- `findById(id)`
-- `findAll()`
-- `clear()`
+- `update(id, patch)` updates a local record, increments `version`, updates `updatedAt`, and queues an update operation.
+- `delete(id)` tombstones a local record and queues a delete operation.
+- `findById(id)` returns one active record or `undefined`.
+- `findAll()` returns active records in the collection.
+- `clear()` removes local records for that collection.
 
 ## Engine API
 
-- `syncNow()`
-- `getStatus()`
-- `subscribe(listener)`
-- `on(event, listener)`
-- `close()`
+- `syncNow()` pulls remote changes and processes pending queue operations sequentially.
+- `getStatus()` returns aggregate sync state.
+- `subscribe(listener)` subscribes to aggregate `SyncStatus` changes.
+- `on(event, listener)` subscribes to lifecycle events.
+- `close()` closes event listeners and the IndexedDB connection.
+
+See [Events](./events.md) for event payloads.
 
 ## Queue API
 
-- `queue.list(status?)`
-- `queue.retry(operationId)`
-- `queue.discard(operationId)`
-- `queue.clearSynced()`
+- `queue.list(status?)`: list all operations or operations matching a queue status.
+- `queue.retry(operationId)`: reset a failed operation to pending and clear retry metadata.
+- `queue.discard(operationId)`: remove an operation without rolling back local record state.
+- `queue.clearSynced()`: remove synced operations from local queue history.
+
+See [Queue Management](./queue-management.md) for recovery patterns and retry behavior.
 
 ## Conflict API
 
-- `conflicts.list()`
-- `conflicts.resolve(id, strategy, manualRecord)`
+- `conflicts.list()` returns unresolved conflicts.
+- `conflicts.resolve(id, strategy, manualRecord)` resolves a conflict with `client-wins`, `server-wins`, or `manual`.
+
+See [Conflict Resolution](./conflict-resolution.md) for strategies.
 
 ## Events
 
@@ -51,6 +72,10 @@ Creates an Open Sync engine.
 - `operation:error`
 - `conflict`
 
+See [Events](./events.md) for payloads and usage guidance.
+
 ## Errors
 
 Open Sync throws `OpenSyncError` for public API failures. Stable codes include `collection_not_registered`, `record_not_found`, `duplicate_record`, `conflict_not_found`, `manual_resolution_required`, `migration_failed`, `adapter_error`, `invalid_configuration`, and `provider_missing`.
+
+See [Error Handling](./error-handling.md) for recovery examples.
