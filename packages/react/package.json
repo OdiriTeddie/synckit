@@ -7,14 +7,24 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OdiriTeddie/open-sync.git",
     "directory": "packages/react"
   },
-  "keywords": ["local-first", "offline", "sync", "react", "typescript"],
+  "keywords": [
+    "local-first",
+    "offline",
+    "sync",
+    "react",
+    "typescript"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -36,7 +46,11 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "fake-indexeddb": "^6.0.0",
+    "jsdom": "^24.1.0",
     "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tsup": "^8.1.0",
     "typescript": "^5.5.3",
     "vitest": "^1.6.0"
